@@ -23,3 +23,16 @@ class SignUp(generic.CreateView):
     
 #     template_name = 'accounts/home.html'
 
+def new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect('accounts/home')
+
+            
+    else:
+        form = PostForm()
+    return render(request, 'accounts/account_edit.html', {'form': form})
