@@ -25,7 +25,7 @@ class SignUp(generic.CreateView):
 
 def new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = forms.AccountForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
@@ -34,5 +34,5 @@ def new(request):
 
             
     else:
-        form = PostForm()
+        form = forms.AccountForm()
     return render(request, 'accounts/account_edit.html', {'form': form})
