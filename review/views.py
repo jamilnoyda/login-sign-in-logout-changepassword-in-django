@@ -29,6 +29,8 @@ def new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
+            post.instance.user = self.request.user
+
             post.save()
             return redirect('accounts/home')
 
