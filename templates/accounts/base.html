@@ -2,11 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  <title>{% block title %}Django login{% endblock %}</title>
+  {% load static %}
+ 
+  <link rel="stylesheet" type="text/css" href="{% static 'review/style.css' %}">
+
 </head>
 <body>
+
+<p>this is comes froms base</p>
   <main>
     {% block content %}
+	
+
     {% endblock %}
   </main>
 </body>

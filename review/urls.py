@@ -8,7 +8,9 @@ urlpatterns = [
     
 
     url(r'^signup/', views.SignUp.as_view(), name='signup'),
-    url(r'^home/', views.new, name='home'),
+    url(r'^customerlist/', views.CustomerListView.as_view(), name='list'),
+    #url(r'^home/', views.new, name='home'),
+    
 
 
 
